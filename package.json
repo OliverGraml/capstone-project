@@ -1,0 +1,27 @@
+{
+  "name": "capstone-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd ./client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd ./server && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OliverGraml/capstone-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OliverGraml/capstone-project/issues"
+  },
+  "homepage": "https://github.com/OliverGraml/capstone-project#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
