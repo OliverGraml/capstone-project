@@ -59,6 +59,7 @@ const NavIconView = styled.button`
     transform: scale(1.1);
     opacity: 0.9;
     color: red;
+  }
 `;
 const NavIconSpot = styled.button`
   display: inline-block;
@@ -74,6 +75,7 @@ const NavIconSpot = styled.button`
     transform: scale(1.1);
     opacity: 0.9;
     color: red;
+  }
 `;
 const NavIconLocation = styled.button`
   display: inline-block;
@@ -89,4 +91,5 @@ const NavIconLocation = styled.button`
     transform: scale(1.1);
     opacity: 0.9;
     color: red;
+  }
 `;

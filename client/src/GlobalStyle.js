@@ -4,7 +4,7 @@ import Background from './images/background-image.png';
 export default createGlobalStyle`   
     :root {
         --light-grey: #707070;
-        
+
     }
 
     *,

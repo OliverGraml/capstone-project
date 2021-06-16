@@ -20,7 +20,10 @@
     "url": "https://github.com/OliverGraml/capstone-project/issues"
   },
   "homepage": "https://github.com/OliverGraml/capstone-project#readme",
-  "dependencies": {},
+  "dependencies": {
+    "leaflet": "^1.7.1",
+    "react-leaflet": "^3.2.0"
+  },
   "devDependencies": {
     "concurrently": "^6.2.0"
   }
