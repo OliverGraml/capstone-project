@@ -70,6 +70,9 @@ const NavIconSpot = styled.button`
   width: 6rem;
   opacity: 0.7;
   cursor: pointer;
+  position: relative;
+  left: 6.9rem;
+  top: -2rem;
   transition: all 1s ease-in-out;
   :hover {
     transform: scale(1.1);
@@ -86,6 +89,9 @@ const NavIconLocation = styled.button`
   width: 5rem;
   opacity: 0.7;
   cursor: pointer;
+  position: relative;
+  left: 4.5rem;
+  top: -3rem;
   transition: all 1s ease-in-out;
   :hover {
     transform: scale(1.1);

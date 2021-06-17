@@ -23,6 +23,7 @@ const TitleWrapper = styled.div`
   h1 {
     text-align: center;
     margin: 0.5rem;
+    letter-spacing: 0.25rem;
   }
   h3 {
     margin: 1.4rem 0.3rem 0 0.3rem;
@@ -33,13 +34,18 @@ const TitleWrapper = styled.div`
 
 const UpperText = styled.h3`
   display: inline-flex;
-  justify-content: flex-start;
+  justify-content: center;
+  position: relative;
+  left: 2.5rem;
 `;
 const MiddleText = styled.h3`
   display: inline-flex;
-  justify-content: flex-end;
+  justify-content: center;
+  position: relative;
+  right: 3.5rem;
 `;
 const LastText = styled.h3`
   display: inline-flex;
   justify-content: center;
+  position: relative;
 `;
