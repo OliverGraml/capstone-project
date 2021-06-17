@@ -6,7 +6,6 @@ import {
   useMapEvents,
 } from 'react-leaflet';
 import styled from 'styled-components';
-import 'leaflet/dist/leaflet.css';
 import {useEffect, useState} from 'react';
 
 function LocationMarker() {
