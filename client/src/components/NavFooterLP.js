@@ -26,7 +26,7 @@ const NavWrapper = styled.footer`
   grid-template-rows: 144px 144px;
   justify-content: center;
   position: relative;
-  top: 10rem;
+  top: 6rem;
   bottom: 2rem;
 `;
 const NavIconMap = styled.button`
