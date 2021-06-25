@@ -77,7 +77,7 @@ export default function CreateSpotForm() {
 
         <Buttons>
           <Button isPrimary>Add Spot</Button>
-          <Button>Cancel</Button>
+          <Button type="reset">Cancel</Button>
         </Buttons>
       </Form>
     </>
