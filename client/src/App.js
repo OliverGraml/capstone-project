@@ -13,12 +13,28 @@ import Header from './components/Header';
 
 function App() {
   const [serverMessage, setServerMessage] = useState('');
+  const [personalSpots, setPersonalSpots] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/')
+    fetch('http://localhost:4000/spot')
       .then((res) => res.json())
-      .then((res) => setServerMessage(res));
-  });
+      .then((apiSpots) => setPersonalSpots(apiSpots))
+      .catch((error) => console.error(error));
+  }),
+    [];
+
+  function addSpot(spot) {
+    fetch('http://localhost:4000/spot', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(spot),
+    })
+      .then((result) => result.json())
+      .then((spotSaved) => setPersonalSpots([...personalSpots, spotSaved]))
+      .catch((error) => console.error(error));
+  }
 
   return (
     <div className="App">
