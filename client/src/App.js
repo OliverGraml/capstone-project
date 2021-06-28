@@ -20,8 +20,7 @@ function App() {
       .then((res) => res.json())
       .then((apiSpots) => setPersonalSpots(apiSpots))
       .catch((error) => console.error(error));
-  }),
-    [];
+  }, []);
 
   function addSpot(spot) {
     fetch('http://localhost:4000/spot', {
@@ -53,7 +52,7 @@ function App() {
         </Route>
 
         <Route path="/CreateSpotForm">
-          <CreateSpotForm />
+          <CreateSpotForm onAddSpot={addSpot} />
         </Route>
 
         <Route path="/CreateLocationForm">

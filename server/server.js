@@ -3,6 +3,8 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
+import SpotRoutes from './routes/spot.routes.js';
+
 dotenv.config();
 
 const connectionString =
@@ -19,6 +21,8 @@ const server = express();
 
 server.use(cors());
 server.use(express.json());
+
+server.use(SpotRoutes);
 
 server.get('/', (req, res) =>
   res.json({

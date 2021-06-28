@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import {useState} from 'react';
+import validatePersonalSpot from '../lib/validation.js';
 
-export default function CreateSpotForm() {
+export default function CreateSpotForm(onAddSpot) {
   const initialPersonalSpotState = {
     username: '',
     email: '',
@@ -15,6 +16,7 @@ export default function CreateSpotForm() {
   const [lng, setLng] = useState(null);
   const [status, setStatus] = useState(null);
   const [personalSpot, setPersonalSpot] = useState(initialPersonalSpotState);
+  const [isError, setIsError] = useState(false);
 
   function getLocation() {
     if (!navigator.geolocation) {
@@ -36,11 +38,20 @@ export default function CreateSpotForm() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
+
+    if (validatePersonalSpot(personalSpot)) {
+      onAddSpot(personalSpot);
+      setPersonalSpot(initialPersonalSpotState);
+      setIsError(false);
+    } else {
+      setIsError(true);
+    }
   }
 
   return (
     <>
       <Form onSubmit={handleFormSubmit}>
+        {isError && <ErrorBox>You have an error in your form.</ErrorBox>}
         <label>User Name:</label>
         <input type="text" name="userName" />
 
@@ -132,4 +143,9 @@ const LocationButton = styled.button`
   color: var(--primary-orange);
   margin: 0.5rem auto 1rem;
   padding: 0.2rem 0.3rem;
+`;
+
+const ErrorBox = styled.div`
+  background: hsl(340, 60%, 50%);
+  padding: 1rem;
 `;
