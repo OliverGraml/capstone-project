@@ -3,8 +3,13 @@ import Background from './images/background-image.png';
 
 export default createGlobalStyle`   
     :root {
+        --light-cream: #A0F6EB;
         --light-grey: #707070;
-        
+        --light-blue: #8ECAE6;
+        --light-orange: #E6AD9A;
+        --primary-orange: #F4A261;
+        --dark-blue: #3259A8;
+       
     }
 
     *,

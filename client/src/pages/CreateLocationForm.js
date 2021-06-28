@@ -1,3 +1,37 @@
-export default function CreateLocationForm() {
-  return <h1>CreateLocation</h1>;
-}
+import React, {useState} from 'react';
+
+//export default function CreateLocationForm() {
+const App = () => {
+  const [lat, setLat] = useState(null);
+  const [lng, setLng] = useState(null);
+  const [status, setStatus] = useState(null);
+
+  const getLocation = () => {
+    if (!navigator.geolocation) {
+      setStatus('Geolocation is not supported by your browser');
+    } else {
+      setStatus('Locating...');
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setStatus(null);
+          setLat(position.coords.latitude);
+          setLng(position.coords.longitude);
+        },
+        () => {
+          setStatus('Unable to retrieve your location');
+        }
+      );
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={getLocation}>Get Location</button>
+      <h1>Coordinates</h1>
+      <p>{status}</p>
+      {lat && <p>Latitude: {lat}</p>}
+      {lng && <p>Longitude: {lng}</p>}
+    </div>
+  );
+};
+export default App;

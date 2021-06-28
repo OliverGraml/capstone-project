@@ -27,4 +27,8 @@ const Img = styled.img`
   height: 4rem;
   margin: 0.5rem;
   cursor: pointer;
+  opacity: 1;
+  :hover {
+    opacity: 0.4;
+  }
 `;

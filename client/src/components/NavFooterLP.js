@@ -26,7 +26,7 @@ const NavWrapper = styled.footer`
   grid-template-rows: 144px 144px;
   justify-content: center;
   position: relative;
-  top: 10rem;
+  top: 6rem;
   bottom: 2rem;
 `;
 const NavIconMap = styled.button`
@@ -59,6 +59,7 @@ const NavIconView = styled.button`
     transform: scale(1.1);
     opacity: 0.9;
     color: red;
+  }
 `;
 const NavIconSpot = styled.button`
   display: inline-block;
@@ -69,11 +70,15 @@ const NavIconSpot = styled.button`
   width: 6rem;
   opacity: 0.7;
   cursor: pointer;
+  position: relative;
+  left: 6.9rem;
+  top: -2rem;
   transition: all 1s ease-in-out;
   :hover {
     transform: scale(1.1);
     opacity: 0.9;
     color: red;
+  }
 `;
 const NavIconLocation = styled.button`
   display: inline-block;
@@ -84,9 +89,13 @@ const NavIconLocation = styled.button`
   width: 5rem;
   opacity: 0.7;
   cursor: pointer;
+  position: relative;
+  left: 4.5rem;
+  top: -3rem;
   transition: all 1s ease-in-out;
   :hover {
     transform: scale(1.1);
     opacity: 0.9;
     color: red;
+  }
 `;
