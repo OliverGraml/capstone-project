@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {useState} from 'react';
 import validatePersonalSpot from '../lib/validation.js';
 
-export default function CreateSpotForm(onAddSpot) {
+export default function CreateSpotForm({onAddSpot}) {
   const initialPersonalSpotState = {
     username: '',
     email: '',
@@ -48,38 +48,71 @@ export default function CreateSpotForm(onAddSpot) {
     }
   }
 
+  function updateSpot(event) {
+    const fieldName = event.target.name;
+    let fieldValue = event.target.value;
+
+    setPersonalSpot({...personalSpot, [fieldName]: fieldValue});
+  }
+  console.log(personalSpot);
+
   return (
     <>
       <Form onSubmit={handleFormSubmit}>
         {isError && <ErrorBox>You have an error in your form.</ErrorBox>}
         <label>User Name:</label>
-        <input type="text" name="userName" />
+        <input
+          type="text"
+          name="username"
+          onChange={updateSpot}
+          value={personalSpot.username}
+        />
 
         <label>E-Mail to reach you:</label>
-        <input type="email" name="email" />
+        <input
+          type="email"
+          name="email"
+          onChange={updateSpot}
+          value={personalSpot.email}
+        />
 
         <label>Search or offer something:</label>
-        <input type="text" name="further" />
+        <input
+          type="text"
+          name="further_info"
+          onChange={updateSpot}
+          value={personalSpot.further_info}
+        />
 
         <section>
           <div>
             <label htmlFor="openToMeet">Open to meet other DNs:</label>
           </div>
           <div>
-            <input type="radio" value="yes" name="openToMeet" id="yes" />
+            <input type="radio" value="true" name="openToMeet" id="yes" />
             <label for="yes">Yes</label>
           </div>
           <div>
-            <input type="radio" value="no" name="openToMeet" id="no" />
+            <input type="radio" value="false" name="openToMeet" id="no" />
             <label for="no">No</label>
           </div>
         </section>
 
-        <label>Latitute:</label>
-        <input type="text" name="lat" value={lat} />
+        <label>Latitude:</label>
+        <input
+          type="text"
+          name="latitude"
+          onChange={updateSpot}
+          value={personalSpot.latitude}
+        />
 
-        <label>Longtitute:</label>
-        <input type="text" name="long" value={lng} />
+        <label>Longtitude:</label>
+        <input
+          type="text"
+          name="longtitude"
+          onChange={updateSpot}
+          value={personalSpot.longtitude}
+        />
 
         <div>
           <LocationButton onClick={getLocation}>Get Location</LocationButton>
