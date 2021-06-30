@@ -7,7 +7,7 @@ function postSpot(req, res) {
     further_info: req.body.further_info,
     meet_others: req.body.meet_others,
     latitude: req.body.latitude,
-    longtitude: req.body.longtitude,
+    longitude: req.body.longitude,
   });
   spot
     .save()

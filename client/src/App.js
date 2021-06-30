@@ -44,11 +44,11 @@ function App() {
         </Route>
 
         <Route path="/MapPage">
-          <MapPage />
+          <MapPage personalSpots={personalSpots} />
         </Route>
 
         <Route path="/ListView">
-          <ListView />
+          <ListView spots={personalSpots} />
         </Route>
 
         <Route path="/CreateSpotForm">

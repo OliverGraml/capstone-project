@@ -6,7 +6,7 @@ const spotSchema = new mongoose.Schema({
   further_info: String,
   meet_others: Boolean,
   latitude: Number,
-  longtitude: Number,
+  longitude: Number,
 });
 
 const Spot = mongoose.model('NomadSpot', spotSchema);

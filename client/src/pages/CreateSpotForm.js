@@ -9,7 +9,7 @@ export default function CreateSpotForm({onAddSpot}) {
     further_info: '',
     meet_others: true,
     latitude: '',
-    longtitude: '',
+    longitude: '',
   };
 
   const [lat, setLat] = useState(null);
@@ -26,8 +26,13 @@ export default function CreateSpotForm({onAddSpot}) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           setStatus(null);
-          setLat(position.coords.latitude);
-          setLng(position.coords.longitude);
+          setPersonalSpot({
+            ...personalSpot,
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+          //setLat(position.coords.latitude);
+          //setLng(position.coords.longitude);
         },
         () => {
           setStatus('Unable to retrieve your location');
@@ -106,22 +111,35 @@ export default function CreateSpotForm({onAddSpot}) {
           value={personalSpot.latitude}
         />
 
-        <label>Longtitude:</label>
+        <label>Longitude:</label>
         <input
           type="text"
-          name="longtitude"
+          name="longitude"
           onChange={updateSpot}
-          value={personalSpot.longtitude}
+          value={personalSpot.longitude}
         />
 
         <div>
-          <LocationButton onClick={getLocation}>Get Location</LocationButton>
+          <LocationButton
+            type="button"
+            onClick={getLocation}
+            onChange={updateSpot}
+          >
+            Get Location
+          </LocationButton>
           <p>{status}</p>
         </div>
 
         <Buttons>
-          <Button isPrimary>Add Spot</Button>
-          <Button type="reset">Cancel</Button>
+          <Button isPrimary type="submit">
+            Add Spot
+          </Button>
+          <Button
+            onClick={() => setPersonalSpot(initialPersonalSpotState)}
+            type="reset"
+          >
+            Cancel
+          </Button>
         </Buttons>
       </Form>
     </>
