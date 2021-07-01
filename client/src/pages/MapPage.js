@@ -38,12 +38,14 @@ export default function MapPage({personalSpots}) {
       <>
         <Marker key={spot} position={[spot.latitude, spot.longitude]}>
           <Popup>
-            <h3>{spot.username}</h3>
+            <UserName>{spot.username}</UserName>
             <p>
               {spot.meet_others
                 ? 'Open to meet!'
                 : 'Not interested in meet up´s!'}
             </p>
+            <p>Info: {spot.further_info}</p>
+            <p>Contact: {spot.email}</p>
           </Popup>
         </Marker>
       </>
@@ -93,4 +95,8 @@ const ZoomInfo = styled.div`
   color: black;
   font-weight: 600;
   padding: 0.2rem 0.5rem;
+`;
+
+const UserName = styled.h3`
+  text-decoration: underline;
 `;
