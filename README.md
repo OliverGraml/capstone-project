@@ -8,4 +8,4 @@ With the Single-Page-Web-Application Nomad-Spot you can search for ohter Digital
 After cloning this repository, simply run `npm install` in the main directory – this will also install all dependencies of the `client` and the Express `server`.
 
 ## Run dev mode
-Make sure your MongoDb is running and start the app with 'npm run dev' from the shell.
+Make sure your MongoDb is running and start the app with `npm run dev` from the shell.
