@@ -115,33 +115,33 @@ const SpotCard = styled.article`
   border-radius: 0.4rem;
   color: var(--dark-orange);
   height: 10rem;
-  width: 80%;
   padding: 1rem 1.5rem;
-  opacity: 0.8;
   margin: 1.5rem auto;
+  opacity: 0.8;
+  width: 80%;
 `;
 
 const TopWrapper = styled.div`
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
 `;
 
 const MainWrapper = styled.div`
-  display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  display: flex;
+  justify-content: center;
 `;
 const RadiusSearchButton = styled.button`
-  display: flex;
+  background: white;
   border: 1px solid var(--light-orange);
   border-radius: 0.4rem;
   cursor: pointer;
-  font-size: 1rem;
-  background: white;
   color: var(--primary-orange);
+  display: flex;
+  font-size: 1rem;
   margin: 0.5rem auto 1rem;
   padding: 0.2rem 0.3rem;
 `;

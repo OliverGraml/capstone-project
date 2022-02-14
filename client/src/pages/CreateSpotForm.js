@@ -164,34 +164,34 @@ const Form = styled.form`
 `;
 
 const Buttons = styled.section`
+  align-items: center;
   display: flex;
   gap: 1rem;
-  padding: 0.5rem 0;
-  align-items: center;
   justify-content: center;
+  padding: 0.5rem 0;
 `;
 
 const Button = styled.button`
-  padding: 0.3rem;
-  display: flex;
-  justify-content: center;
   border-radius: 0.4rem;
-  cursor: pointer;
-  font-size: 1.2rem;
-  gap: 0.5rem;
-  width: 8rem;
   background: ${(props) =>
     props.isPrimary ? 'var(--primary-orange)' : 'var(--light-orange)'};
+  cursor: pointer;
+  display: flex;
+  font-size: 1.2rem;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.3rem;
+  width: 8rem;
 `;
 
 const LocationButton = styled.button`
-  display: flex;
+  background: white;
   border: 1px solid var(--light-orange);
   border-radius: 0.4rem;
   cursor: pointer;
-  font-size: 1rem;
-  background: white;
   color: var(--primary-orange);
+  display: flex;
+  font-size: 1rem;
   margin: 0.5rem auto 1rem;
   padding: 0.2rem 0.3rem;
 `;
