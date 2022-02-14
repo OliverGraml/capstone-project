@@ -28,16 +28,17 @@ export default createGlobalStyle`
     }
 
     body {
-        font-family: 'Noteworthy', sans-serif;
-        background-image: url(${Background});
         background-attachment: fixed;
-        background-size: cover;
-        background-repeat: no-repeat;
+        background-image: url(${Background});
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         }
+        font-family: 'Noteworthy', sans-serif;
+
     img {
-        max-width: 100%;
-        height: auto;
         display: block;
+        height: auto;
+        max-width: 100%;
     }
 `;

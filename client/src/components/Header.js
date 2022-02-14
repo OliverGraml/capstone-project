@@ -17,18 +17,18 @@ export default function Header() {
 
 const HeaderWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   height: 4.5rem;
-  padding-left: 0.5rem;
+  justify-content: space-between;
   margin: 0;
+  padding-left: 0.5rem;
 `;
 const Img = styled.img`
-  width: 4rem;
+  cursor: pointer;
   height: 4rem;
   margin: 0.5rem;
-  cursor: pointer;
   opacity: 1;
   :hover {
     opacity: 0.4;
   }
+  width: 4rem;
 `;

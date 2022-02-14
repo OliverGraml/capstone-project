@@ -38,12 +38,14 @@ export default function MapPage({personalSpots}) {
       <>
         <Marker key={spot} position={[spot.latitude, spot.longitude]}>
           <Popup>
-            <h3>{spot.username}</h3>
+            <UserName>{spot.username}</UserName>
             <p>
               {spot.meet_others
                 ? 'Open to meet!'
                 : 'Not interested in meet up´s!'}
             </p>
+            <p>Info: {spot.further_info}</p>
+            <p>Contact: {spot.email}</p>
           </Popup>
         </Marker>
       </>
@@ -74,23 +76,27 @@ export default function MapPage({personalSpots}) {
 }
 
 const MapWrapper = styled.div`
-  z-index: 1;
   position: relative;
   .leaflet-container {
     height: 159vw;
   }
+  z-index: 1;
 `;
 const ZoomInfo = styled.div`
-  display: flex;
-  top: 13%;
-  left: 27%;
-  opacity: 0.8;
-  position: absolute;
-  z-index: 100;
+  background-color: var(--dark-orange);
   border: solid 1px var(--light-grey);
   border-radius: 0.3rem;
-  background-color: var(--dark-orange);
   color: black;
+  display: flex;
   font-weight: 600;
+  left: 27%;
+  opacity: 0.8;
   padding: 0.2rem 0.5rem;
+  position: absolute;
+  top: 13%;
+  z-index: 100;
+`;
+
+const UserName = styled.h3`
+  text-decoration: underline;
 `;

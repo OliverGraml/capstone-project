@@ -64,7 +64,7 @@ export default function ListView({spots}) {
         spotsSortedByDistance.map((spot) => (
           <SpotCard key={spot._id}>
             <TopWrapper>
-              <h3>{spot.username} </h3>
+              <UserName>{spot.username} </UserName>
             </TopWrapper>
             <MainWrapper>
               <h4>
@@ -114,35 +114,38 @@ const SpotCard = styled.article`
   border: 1px solid var(--dark-orange);
   border-radius: 0.4rem;
   color: var(--dark-orange);
-  height: 8rem;
-  width: 80%;
-  padding: 0.1rem 1rem 1.2rem 1rem;
-  margin: 0.5rem;
-  opacity: 0.8;
+  height: 10rem;
+  padding: 1rem 1.5rem;
   margin: 1.5rem auto;
+  opacity: 0.8;
+  width: 80%;
 `;
 
 const TopWrapper = styled.div`
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
 `;
 
 const MainWrapper = styled.div`
-  display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  display: flex;
+  justify-content: center;
 `;
 const RadiusSearchButton = styled.button`
-  display: flex;
+  background: white;
   border: 1px solid var(--light-orange);
   border-radius: 0.4rem;
   cursor: pointer;
-  font-size: 1rem;
-  background: white;
   color: var(--primary-orange);
+  display: flex;
+  font-size: 1rem;
   margin: 0.5rem auto 1rem;
   padding: 0.2rem 0.3rem;
+`;
+
+const UserName = styled.h3`
+  text-decoration: underline;
 `;
